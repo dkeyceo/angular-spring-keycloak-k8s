@@ -1,4 +1,4 @@
-package com.dkey.keycloak.k8s;
+package com.dkey.backend.keycloak.k8s;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
