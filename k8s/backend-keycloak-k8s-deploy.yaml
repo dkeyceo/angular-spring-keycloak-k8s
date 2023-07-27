@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: backend-keycloak-k8s
-        image: dkeyceo/backend-keycloak-k8s:v2
+        image: dkeyceo/backend-keycloak-k8s:v3
         ports:
         - containerPort: 8080
         env:

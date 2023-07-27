@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-keycloak-k8s
+  labels:
+    app: frontend-keycloak-k8s
+spec:
+  selector:
+    matchLabels:
+      app: frontend-keycloak-k8s
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend-keycloak-k8s
+    spec:
+      containers:
+      - name: frontend-keycloak-k8s
+        image: dkeyceo/frontend-keycloak-k8s:v1
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-keycloak-k8s
+  labels:
+    app: frontend-keycloak-k8s
+spec:
+  selector:
+    app: frontend-keycloak-k8s
+  ports:
+    - nodePort: 30170
+      protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
