@@ -1,9 +1,13 @@
 package com.dkey.backend.keycloak.k8s.dto;
 
-public class Message {
+public class ResponseMessage {
+
     private String message;
 
-    public Message(String message) {
+    public ResponseMessage() {
+    }
+
+    public ResponseMessage(String message) {
         this.message = message;
     }
 
