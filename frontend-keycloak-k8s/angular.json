@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "crud-example-frontend": {
+    "keycloak-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -23,7 +23,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -65,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "crud-example-frontend:build:production"
+              "browserTarget": "keycloak-frontend:build:production"
             },
             "development": {
-              "browserTarget": "crud-example-frontend:build:development"
+              "browserTarget": "keycloak-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "crud-example-frontend:build"
+            "browserTarget": "keycloak-frontend:build"
           }
         },
         "test": {

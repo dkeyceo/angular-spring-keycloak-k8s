@@ -3,32 +3,40 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { OAuthModule } from 'angular-oauth2-oidc';
 import { FormsModule } from '@angular/forms';
-
-// external
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
-import { ListProductComponent } from './product/list-product.component';
-import { DetailsProductComponent } from './product/details-product.component';
-import { CreateProductComponent } from './product/create-product.component';
-import { EditProductComponent } from './product/edit-product.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
+import { ListComponent } from './foo/list/list.component';
+import { DetailComponent } from './foo/detail/detail.component';
+import { CreateComponent } from './foo/create/create.component';
+import { UpdateComponent } from './foo/update/update.component';
+import { SignupComponent } from './signup/signup.component';
+import { environment } from 'src/environments/environment.prod';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListProductComponent,
-    DetailsProductComponent,
-    CreateProductComponent,
-    EditProductComponent
+    HomeComponent,
+    MenuComponent,
+    ListComponent,
+    DetailComponent,
+    CreateComponent,
+    UpdateComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),
-    HttpClientModule,
-    FormsModule
+    OAuthModule.forRoot({
+      resourceServer: {
+          allowedUrls: [environment.fooURL],
+          sendAccessToken: true
+      }
+  }),
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

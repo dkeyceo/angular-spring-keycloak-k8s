@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
-  
-  productionURL: 'http://172.28.1.12:30007/products/'
+  fooURL: 'http://172.28.1.13:30007/foo/',
+  userURL: 'http://172.28.1.13:30007/user/',
+  issuerURL: 'http://172.28.1.13:31619/auth/realms/tutorial'
 };

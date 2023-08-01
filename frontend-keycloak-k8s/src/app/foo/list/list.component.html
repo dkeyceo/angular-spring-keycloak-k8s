@@ -1,0 +1,31 @@
+<div class="container">
+    <table class="table text-center">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Detail</th>
+        <th *ngIf="isAdmin" scope="col">Update</th>
+        <th *ngIf="isAdmin" scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let foo of foos">
+        <td>{{foo.id}}</td>
+        <td>{{foo.name}}</td>
+
+        <td><button class="btn btn-outline-primary" routerLink="/detail/{{foo.id}}">
+          <i class="far fa-eye"></i>
+        Detail</button></td>
+        <td *ngIf="isAdmin"><button class="btn btn-outline-warning" routerLink="/update/{{foo.id}}">
+          <i class="far fa-edit"></i>
+        Edit</button></td>
+        <td *ngIf="isAdmin"><button 
+          (click)="onDelete(foo.id)"
+          class="btn btn-outline-danger">
+          <i class="far fa-trash-alt"></i>
+        Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

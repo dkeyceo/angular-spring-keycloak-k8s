@@ -19,6 +19,8 @@ spec:
         image: dkeyceo/frontend-keycloak-k8s:v1
         ports:
         - containerPort: 80
+        imagePullPolicy: Always
+        
 ---
 apiVersion: v1
 kind: Service
